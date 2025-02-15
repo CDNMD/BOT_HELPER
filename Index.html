@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chalah Boy Profile</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+        }
+        .name-age {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .comment {
+            margin-top: 20px;
+            font-size: 18px;
+            font-style: italic;
+        }
+        .like-btn {
+            margin-top: 10px;
+            font-size: 16px;
+            padding: 10px;
+            color: white;
+            background-color: red;
+            border: none;
+            cursor: pointer;
+        }
+        .like-btn:hover {
+            background-color: darkred;
+        }
+        .channel-btn {
+            margin-top: 30px;
+            padding: 15px 25px;
+            font-size: 18px;
+            color: white;
+            background-color: green;
+            border: none;
+            cursor: pointer;
+        }
+        .channel-btn:hover {
+            background-color: darkgreen;
+        }
+        .comment-section {
+            margin-top: 30px;
+            padding: 10px;
+            background-color: #333;
+            border-radius: 10px;
+            color: white;
+        }
+        .comment-section textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #444;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            resize: none;
+        }
+        .comment-section button {
+            padding: 10px 15px;
+            background-color: #f1c40f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .comment-section button:hover {
+            background-color: #e1b40f;
+        }
+        .comments-display {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #444;
+            border-radius: 5px;
+        }
+        .comment-item {
+            padding: 5px;
+            margin-bottom: 10px;
+            background-color: #555;
+            border-radius: 5px;
+        }
+        .thank-you-message {
+            margin-top: 15px;
+            font-size: 16px;
+            color: #f1c40f;
+        }
+    </style>
+</head>
+<body>
+
+    <img class="profile-img" src="https://files.catbox.moe/362jo2.jpeg" alt="Profile Image">
+
+    <div class="name-age">
+        <p>My name: CHALAH BOY</p>
+        <p>My age: 999</p>
+        <p>My live in: Japan</p>
+    </div>
+
+    <div class="comment">
+        <p>ඔයාල ට අපේ චැනල්  එක ගැන හිතෙන දේ මෙතනිම් කමෙන්ට් එකක් දාන්න 💐.</p>
+    </div>
+
+    <button class="like-btn" onclick="alert('You liked this comment!')">Like</button>
+
+    <div class="comment-section">
+        <h3>Leave a Comment:</h3>
+        <textarea id="commentInput" placeholder="Write your comment here..."></textarea><br>
+        <button onclick="postComment()">Post Comment</button>
+    </div>
+
+    <div class="comments-display" id="commentsDisplay">
+        <!-- Comments will appear here -->
+    </div>
+
+    <div>
+        <a href="https://whatsapp.com/channel/0029Vb3Pq0v3bbVCOayAIp3f">
+            <button class="channel-btn">CHANNEL LINK</button>
+        </a>
+    </div>
+
+    <script>
+        function postComment() {
+            const commentText = document.getElementById('commentInput').value;
+            if(commentText) {
+                const commentDiv = document.createElement('div');
+                commentDiv.classList.add('comment-item');
+                commentDiv.textContent = commentText;
+
+                const commentsDisplay = document.getElementById('commentsDisplay');
+                commentsDisplay.appendChild(commentDiv);
+
+                const thankYouMessage = document.createElement('div');
+                thankYouMessage.classList.add('thank-you-message');
+                thankYouMessage.textContent = 'Thank you for your comment 🫀';
+
+                commentsDisplay.appendChild(thankYouMessage);
+
+                document.getElementById('commentInput').value = '';  // Clear input field
+            } else {
+                alert('කමෙන්ට් එක මෙතනින් දාන්න');
+            }
+        }
+    </script>
+
+</body>
+</html>
